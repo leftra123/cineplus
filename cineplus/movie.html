@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details - CinePlus</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Watch and download your favorite movies on CinePlus">
+</head>
+<body class="dark-theme">
+    <!-- Header with logo and navigation -->
+    <header class="header">
+        <div class="header__logo-container">
+            <img src="images/logo_cineplus.jpg" alt="CinePlus Logo" class="header__logo">
+        </div>
+        <h1 class="header__title">CinePlus</h1>
+        
+        <nav class="nav" aria-label="Main navigation">
+            <button class="nav__toggle" aria-expanded="false" aria-controls="main-menu">
+                <span class="sr-only">Menu</span>
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul id="main-menu" class="nav__menu">
+                <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">New Releases</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">Categories</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Theme toggle button -->
+        <button class="theme-toggle" aria-label="Toggle dark/light mode">
+            <i class="fas fa-moon"></i>
+        </button>
+    </header>
+
+    <main class="main">
+        <!-- Movie details section -->
+        <section class="movie-details" aria-labelledby="movie-title">
+            <div class="movie-details__container" id="movie-container">
+                <!-- Movie details will be loaded here by JavaScript -->
+                <div class="movie-details__loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <span>Loading movie details...</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video player section (hidden initially) -->
+        <section class="video-player hidden" id="video-section">
+            <div class="video-player__container">
+                <video id="movie-player" class="video-player__video" controls>
+                    <source src="" type="video/mp4" id="video-source">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-player__controls">
+                    <button class="video-player__close" id="close-video">
+                        <i class="fas fa-times"></i> Close Video
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ratings and comments section -->
+        <section class="ratings-section" aria-labelledby="ratings-heading">
+            <h2 id="ratings-heading" class="section-title">Reviews and Ratings</h2>
+            
+            <div class="ratings-form">
+                <h3 class="ratings-form__title">Rate this movie</h3>
+                <div class="ratings-form__stars">
+                    <i class="far fa-star" data-rating="1"></i>
+                    <i class="far fa-star" data-rating="2"></i>
+                    <i class="far fa-star" data-rating="3"></i>
+                    <i class="far fa-star" data-rating="4"></i>
+                    <i class="far fa-star" data-rating="5"></i>
+                </div>
+                <form id="comment-form" class="ratings-form__comment">
+                    <textarea 
+                        class="ratings-form__textarea" 
+                        placeholder="Write your review here..." 
+                        required
+                        aria-label="Your review"
+                    ></textarea>
+                    <button type="submit" class="button button--primary">Submit Review</button>
+                </form>
+            </div>
+            
+            <div class="comments" id="comments-container">
+                <!-- Comments will be loaded here by JavaScript -->
+                <p class="comments__empty">No reviews yet. Be the first to review this movie!</p>
+            </div>
+        </section>
+
+        <!-- Related movies section -->
+        <section class="related-movies" aria-labelledby="related-heading">
+            <h2 id="related-heading" class="section-title">Related Movies</h2>
+            <div class="related-movies__container" id="related-movies">
+                <!-- Related movies will be loaded here by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p class="footer__copyright">&copy; 2025 CinePlus. All rights reserved.</p>
+            <p class="footer__author">Created by Jeremy Carter under MIT License</p>
+        </div>
+    </footer>
+
+    <script src="js/movie.js" type="module"></script>
+</body>
+</html>

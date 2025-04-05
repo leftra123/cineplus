@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinePlus - Movie Streaming</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="CinePlus - Watch and download your favorite movies">
+</head>
+<body class="dark-theme">
+    <!-- Header with logo and navigation -->
+    <header class="header">
+        <div class="header__logo-container">
+            <img src="images/logo_cineplus.jpg" alt="CinePlus Logo" class="header__logo">
+        </div>
+        <h1 class="header__title">CinePlus</h1>
+        
+        <nav class="nav" aria-label="Main navigation">
+            <button class="nav__toggle" aria-expanded="false" aria-controls="main-menu">
+                <span class="sr-only">Menu</span>
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul id="main-menu" class="nav__menu">
+                <li class="nav__item"><a href="#" class="nav__link nav__link--active">Home</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">New Releases</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">Categories</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Theme toggle button -->
+        <button class="theme-toggle" aria-label="Toggle dark/light mode">
+            <i class="fas fa-moon"></i>
+        </button>
+    </header>
+
+    <main class="main">
+        <!-- Search and filter section -->
+        <section class="search-section">
+            <form class="search-form" role="search">
+                <input type="search" class="search-form__input" placeholder="Search movies..." aria-label="Search movies">
+                <button type="submit" class="search-form__button" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+            
+            <div class="filters">
+                <select class="filters__select" aria-label="Filter by category">
+                    <option value="">All Categories</option>
+                    <option value="sci-fi">Sci-Fi</option>
+                    <option value="action">Action</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Featured movie section -->
+        <section class="featured" aria-labelledby="featured-heading">
+            <h2 id="featured-heading" class="section-title">Featured Movie</h2>
+            <article class="featured__movie">
+                <img src="images/star_wars1.webp" alt="Star Wars Episode I" class="featured__image">
+                <div class="featured__content">
+                    <h3 class="featured__title">Star Wars: Episode I</h3>
+                    <p class="featured__description">
+                        Join Qui-Gon Jinn and Obi-Wan Kenobi as they discover a young Anakin Skywalker
+                        and face the menacing Darth Maul in this epic sci-fi adventure.
+                    </p>
+                    <a href="movie.html?id=star1" class="button button--primary">Watch Now</a>
+                </div>
+            </article>
+        </section>
+
+        <!-- Movie gallery section -->
+        <section class="gallery" aria-labelledby="gallery-heading">
+            <h2 id="gallery-heading" class="section-title">Movie Gallery</h2>
+            
+            <div class="gallery__container" id="movie-gallery">
+                <!-- Movies will be loaded here by JavaScript -->
+            </div>
+            
+            <!-- Pagination controls -->
+            <div class="pagination" aria-label="Pagination">
+                <button id="prev-page" class="pagination__button pagination__button--prev" aria-label="Previous page" disabled>
+                    <i class="fas fa-chevron-left"></i> Previous
+                </button>
+                <span id="page-indicator" class="pagination__indicator">Page 1</span>
+                <button id="next-page" class="pagination__button pagination__button--next" aria-label="Next page">
+                    Next <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p class="footer__copyright">&copy; 2025 CinePlus. All rights reserved.</p>
+            <p class="footer__author">Created by Jeremy Carter under MIT License</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js" type="module"></script>
+</body>
+</html>
